@@ -10,7 +10,6 @@ from herbs_predictor import herb_prediction
 def herbsApi(request):
     if request.method == 'POST':
         symptom_data = JSONParser().parse(request)
+        print(symptom_data)
         herb = herb_prediction.seeHerb(symptom_data)
         return JsonResponse(herb,safe=False)
-
-
